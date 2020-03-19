@@ -10,10 +10,10 @@
 		749ACDFC2423076E000452D5 /* ContactsDB.plist in Resources */ = {isa = PBXBuildFile; fileRef = 749ACDFB2423076E000452D5 /* ContactsDB.plist */; };
 		749ACDFE242307B8000452D5 /* PlistLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ACDFD242307B8000452D5 /* PlistLoader.swift */; };
 		749ACE0024230880000452D5 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ACDFF24230880000452D5 /* Contact.swift */; };
+		749ACE022423EB64000452D5 /* ContactListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ACE012423EB64000452D5 /* ContactListController.swift */; };
+		749ACE042423EBBA000452D5 /* ContactDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ACE032423EBBA000452D5 /* ContactDetailController.swift */; };
 		74CB26152422C0A3007FE20A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CB26142422C0A3007FE20A /* AppDelegate.swift */; };
 		74CB26172422C0A3007FE20A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CB26162422C0A3007FE20A /* SceneDelegate.swift */; };
-		74CB26192422C0A3007FE20A /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CB26182422C0A3007FE20A /* MasterViewController.swift */; };
-		74CB261B2422C0A3007FE20A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CB261A2422C0A3007FE20A /* DetailViewController.swift */; };
 		74CB261E2422C0A3007FE20A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74CB261C2422C0A3007FE20A /* Main.storyboard */; };
 		74CB26202422C0A5007FE20A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CB261F2422C0A5007FE20A /* Assets.xcassets */; };
 		74CB26232422C0A5007FE20A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74CB26212422C0A5007FE20A /* LaunchScreen.storyboard */; };
@@ -23,11 +23,11 @@
 		749ACDFB2423076E000452D5 /* ContactsDB.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ContactsDB.plist; sourceTree = "<group>"; };
 		749ACDFD242307B8000452D5 /* PlistLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistLoader.swift; sourceTree = "<group>"; };
 		749ACDFF24230880000452D5 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		749ACE012423EB64000452D5 /* ContactListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListController.swift; sourceTree = "<group>"; };
+		749ACE032423EBBA000452D5 /* ContactDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailController.swift; sourceTree = "<group>"; };
 		74CB26112422C0A3007FE20A /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74CB26142422C0A3007FE20A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74CB26162422C0A3007FE20A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		74CB26182422C0A3007FE20A /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		74CB261A2422C0A3007FE20A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		74CB261D2422C0A3007FE20A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74CB261F2422C0A5007FE20A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74CB26222422C0A5007FE20A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,8 +66,6 @@
 			children = (
 				74CB26142422C0A3007FE20A /* AppDelegate.swift */,
 				74CB26162422C0A3007FE20A /* SceneDelegate.swift */,
-				74CB26182422C0A3007FE20A /* MasterViewController.swift */,
-				74CB261A2422C0A3007FE20A /* DetailViewController.swift */,
 				74CB261C2422C0A3007FE20A /* Main.storyboard */,
 				74CB261F2422C0A5007FE20A /* Assets.xcassets */,
 				74CB26212422C0A5007FE20A /* LaunchScreen.storyboard */,
@@ -75,6 +73,8 @@
 				74CB26242422C0A5007FE20A /* Info.plist */,
 				749ACDFD242307B8000452D5 /* PlistLoader.swift */,
 				749ACDFF24230880000452D5 /* Contact.swift */,
+				749ACE012423EB64000452D5 /* ContactListController.swift */,
+				749ACE032423EBBA000452D5 /* ContactDetailController.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -152,11 +152,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				749ACE0024230880000452D5 /* Contact.swift in Sources */,
+				749ACE042423EBBA000452D5 /* ContactDetailController.swift in Sources */,
 				74CB26152422C0A3007FE20A /* AppDelegate.swift in Sources */,
 				74CB26172422C0A3007FE20A /* SceneDelegate.swift in Sources */,
-				74CB26192422C0A3007FE20A /* MasterViewController.swift in Sources */,
 				749ACDFE242307B8000452D5 /* PlistLoader.swift in Sources */,
-				74CB261B2422C0A3007FE20A /* DetailViewController.swift in Sources */,
+				749ACE022423EB64000452D5 /* ContactListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +301,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FGCRV72242;
 				INFOPLIST_FILE = Contacts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -318,6 +319,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FGCRV72242;
 				INFOPLIST_FILE = Contacts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
