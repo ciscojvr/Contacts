@@ -56,11 +56,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
     // MARK: - Split view
 
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
+        
+        // First we will figure out if we have a contact to display first. If we do, then we'll display the secondary controller on top of the primary, otherwise we're going to just display the primary, that list.
+        
         guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
-        guard let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController else { return false }
-        if topAsDetailController.detailItem == nil {
+        guard let topAsDetailController = secondaryAsNavController.topViewController as? ContactDetailController else { return false }
+        if topAsDetailController.contact == nil {
             // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
             return true
+            // returning true means the secondary controller is going to be discarded. In this case, if we rotate back and the secondary controller's contact property is nil, then it's discarded and we see the master list.
         }
         return false
     }

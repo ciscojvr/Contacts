@@ -30,7 +30,7 @@ class PlistLoader {
 class ContactsSource {
     static var contacts: [Contact] {
         let data = try! PlistLoader.array(fromFile: "ContactsDB", ofType: "plist")
-        return data.flatMap { Contact(dictionary: $0) }
+        return data.compactMap { Contact(dictionary: $0) }
     }
     
 }
