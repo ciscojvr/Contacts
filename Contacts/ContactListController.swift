@@ -36,5 +36,20 @@ class ContactListController: UITableViewController {
         cell.detailTextLabel?.text = contact.lastName
         return cell
     }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showContact" {
+            if let indexPath = tableView.indexPathForSelectedRow { // this lets us know which row was tapped on. this is an optional property (tableView.indexPathForSelectedRow) because if no row is selected, the value is obviously nil. So we unwrap using if let statement.
+                let contact = contacts[indexPath.row] // With an index path, since the data source, the contacts array, and rows correspond to one another we use this to figure out which contact the user selected.
+                
+                // gets the destination of the segue. Need to go to navigation controller first because that's where ContactDetailController is embedded in.
+                guard let navigationController = segue.destination as? UINavigationController,
+                    let contactDetailController = navigationController.topViewController as? ContactDetailController else { return }
+                
+                contactDetailController.contact = contact
+            }
+        }
+    }
 
 }
