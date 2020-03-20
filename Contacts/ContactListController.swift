@@ -8,6 +8,27 @@
 
 import UIKit
 
+extension Contact {
+    var firstLetterForSort: String {
+        return String(firstName.first!).uppercased()
+    }
+}
+
+extension ContactsSource {
+    static var sortedUniqueFirstLetters: [String] { // the reason its static is because the contacts property the underlying data on this type is also a static property and we don't want to worry about creating instances for any of this.
+        let firstLetters = contacts.map { $0.firstLetterForSort }
+        let uniqueFirstLetters = Set(firstLetters) // this gives us a unique set of first letters. But this is still unordered since sets dont care about order.
+        return Array(uniqueFirstLetters).sorted()
+    }
+    
+    static var sectionedContacts: [[Contact]] { // [[Abby, Addy, Axel, [Bailey, Bobby], [Carlos, Cesar]]
+        return sortedUniqueFirstLetters.map { firstLetter in
+            let filteredContacts = contacts.filter { $0.firstLetterForSort == firstLetter }
+            return filteredContacts.sorted(by: { $0.firstName < $1.firstName })
+        }
+    }
+}
+
 class ContactListController: UITableViewController {
     
     var contacts = ContactsSource.contacts
