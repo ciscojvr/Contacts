@@ -51,6 +51,8 @@ class ContactsDataSource: NSObject, UITableViewDataSource { // this has to be a 
         
         if contact.isFavorite {
             contactCell.favoriteIcon.image = #imageLiteral(resourceName: "Star")
+        } else {
+            contactCell.favoriteIcon.image = nil
         }
         
         return contactCell
