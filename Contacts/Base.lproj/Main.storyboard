@@ -279,6 +279,31 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="p59-vP-ohc">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="R2G-fK-hYm">
+                                        <rect key="frame" x="0.0" y="465" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R2G-fK-hYm" id="ICZ-cv-8rT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSQ-1O-clS">
+                                                    <rect key="frame" x="8" y="7" width="114" height="30"/>
+                                                    <state key="normal" title="Mark As Favorite"/>
+                                                    <connections>
+                                                        <action selector="markAsFavorite:" destination="IoJ-SN-3h4" eventType="touchUpInside" id="zmx-Mu-Qag"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SSQ-1O-clS" firstAttribute="leading" secondItem="ICZ-cv-8rT" secondAttribute="leading" constant="8" id="imy-Wx-dAM"/>
+                                                <constraint firstItem="SSQ-1O-clS" firstAttribute="centerY" secondItem="ICZ-cv-8rT" secondAttribute="centerY" id="xt9-Xp-XMf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="IoJ-SN-3h4" id="Yjy-P7-1Aa"/>

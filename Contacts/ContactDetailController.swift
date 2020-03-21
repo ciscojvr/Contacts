@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ContactDetailControllerDelegate: class { // a class bound protocol
+    func didMarkAsFavoriteContact(_ contact: Contact)
+}
+
 class ContactDetailController: UITableViewController {
     // we'll always be initializing this TableViewController using init coders, since we're using storyboard to build our layout. Since we won't be able to assign an initial value to the contact stored property during initialization, we have to create an optional property and assign nil to start off. 
     
@@ -24,6 +28,8 @@ class ContactDetailController: UITableViewController {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var zipLabel: UILabel!
+    
+    weak var delegate: ContactDetailControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,4 +50,8 @@ class ContactDetailController: UITableViewController {
         zipLabel.text = contact.zip
     }
 
+    @IBAction func markAsFavorite(_ sender: Any) {
+        guard let contact = contact else { return }
+        delegate?.didMarkAsFavoriteContact(contact)
+    }
 }
