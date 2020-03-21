@@ -17,6 +17,7 @@
 		74CB261E2422C0A3007FE20A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74CB261C2422C0A3007FE20A /* Main.storyboard */; };
 		74CB26202422C0A5007FE20A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CB261F2422C0A5007FE20A /* Assets.xcassets */; };
 		74CB26232422C0A5007FE20A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74CB26212422C0A5007FE20A /* LaunchScreen.storyboard */; };
+		74DE92DF24269663007843FC /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DE92DE24269663007843FC /* ContactCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		74CB261F2422C0A5007FE20A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74CB26222422C0A5007FE20A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74CB26242422C0A5007FE20A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74DE92DE24269663007843FC /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				749ACDFF24230880000452D5 /* Contact.swift */,
 				749ACE012423EB64000452D5 /* ContactListController.swift */,
 				749ACE032423EBBA000452D5 /* ContactDetailController.swift */,
+				74DE92DE24269663007843FC /* ContactCell.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				74CB26152422C0A3007FE20A /* AppDelegate.swift in Sources */,
 				74CB26172422C0A3007FE20A /* SceneDelegate.swift in Sources */,
 				749ACDFE242307B8000452D5 /* PlistLoader.swift in Sources */,
+				74DE92DF24269663007843FC /* ContactCell.swift in Sources */,
 				749ACE022423EB64000452D5 /* ContactListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

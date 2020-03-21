@@ -45,23 +45,57 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContactCell" textLabel="Arm-wq-HPj" style="IBUITableViewCellStyleDefault" id="WCw-Qf-5nD">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContactCell" rowHeight="80" id="WCw-Qf-5nD" customClass="ContactCell" customModule="Contacts" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Arm-wq-HPj">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YDB-a5-kge">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="Z1F-GV-BgK"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8B-Ew-K35">
+                                            <rect key="frame" x="88" y="19" width="73" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="Tje-Uj-1MS">
+                                            <rect key="frame" x="345" y="29" width="22" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="22" id="073-iB-evV"/>
+                                                <constraint firstAttribute="height" constant="22" id="8Oy-de-DGH"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdV-sc-QlT">
+                                            <rect key="frame" x="88" y="48" width="31" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="n8B-Ew-K35" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" constant="8" id="Gca-vh-W8i"/>
+                                        <constraint firstItem="YDB-a5-kge" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leading" id="Gxp-cR-2zq"/>
+                                        <constraint firstItem="Tje-Uj-1MS" firstAttribute="centerY" secondItem="37f-cq-3Eg" secondAttribute="centerY" id="IPf-Ub-kZL"/>
+                                        <constraint firstItem="n8B-Ew-K35" firstAttribute="leading" secondItem="YDB-a5-kge" secondAttribute="trailing" constant="8" id="KAo-30-0Y8"/>
+                                        <constraint firstAttribute="bottom" secondItem="YDB-a5-kge" secondAttribute="bottom" id="McJ-br-1EC"/>
+                                        <constraint firstItem="YDB-a5-kge" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="top" id="OJb-Yc-Iri"/>
+                                        <constraint firstAttribute="trailing" secondItem="Tje-Uj-1MS" secondAttribute="trailing" constant="8" id="oOo-ew-3Fg"/>
+                                        <constraint firstItem="rdV-sc-QlT" firstAttribute="top" secondItem="n8B-Ew-K35" secondAttribute="bottom" constant="8" id="qej-3H-rib"/>
+                                        <constraint firstItem="rdV-sc-QlT" firstAttribute="leading" secondItem="n8B-Ew-K35" secondAttribute="leading" id="rl1-83-EKf"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
+                                    <outlet property="cityLabel" destination="rdV-sc-QlT" id="Axn-3T-IpG"/>
+                                    <outlet property="favoriteIcon" destination="Tje-Uj-1MS" id="jP6-yy-lZx"/>
+                                    <outlet property="nameLabel" destination="n8B-Ew-K35" id="IAC-bT-fhL"/>
+                                    <outlet property="profileImageView" destination="YDB-a5-kge" id="BDh-JU-TwG"/>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showContact" id="6S0-TO-JiA"/>
                                 </connections>
                             </tableViewCell>
@@ -268,7 +302,10 @@
             <point key="canvasLocation" x="708" y="128"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Star" width="514" height="490"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Tll-UG-LXB"/>
+        <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>
 </document>
