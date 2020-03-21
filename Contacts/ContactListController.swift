@@ -90,8 +90,41 @@ class ContactListController: UITableViewController {
                     let contactDetailController = navigationController.topViewController as? ContactDetailController else { return }
                 
                 contactDetailController.contact = contact
+                contactDetailController.delegate = self
             }
         }
     }
+}
 
+extension Contact: Equatable {
+    static func ==(lhs: Contact, rhs: Contact) -> Bool {
+        return lhs.firstName == rhs.firstName && lhs.lastName == rhs.lastName && lhs.street == rhs.street && lhs.city == rhs.city && lhs.state == rhs.state && lhs.zip == rhs.zip && lhs.phone == rhs.phone && lhs.email == rhs.email
+    }
+}
+
+extension ContactListController: ContactDetailControllerDelegate {
+    func didMarkAsFavoriteContact(_ contact: Contact) {
+        // if contact were a class it would be the same reference being passed around and you could change the isFavorite property value, and reload the table view. Contact is a struct however, and everything is passed by value, meaning that its just a copy. If you change the property value on the contact passed here as an argument, that does nothing to the copy stored in the array because it is a copy. To get around this we do the below:
+        var outerIndex: Int? = nil
+        var innerIndex: Int? = nil
+        
+        // In the beginning all we have is a contact that we favorited. We need to iterate through the data source, the sectioned data, find the spot that this contact is in. Even though this is a copy we can find where in the array is a copy that is equal to this one. So we'll find the spot that the contact is in then we'll grab that copy mutate the right property and assign it back to the data source. In order to do this first we need to iterate over the outer array since the sectioned data is an array of arrays.
+        
+        for (index, contacts) in sections.enumerated() {
+            if let indexOfContact = contacts.index(of: contact) { // need to conform to the Equatable protocol and provide an implementation for double equals (==) in order to be able to do this.
+                outerIndex = index
+                innerIndex = indexOfContact
+                break
+            }
+        }
+        
+        if let outerIndex = outerIndex, let innerIndex = innerIndex { // since these variables hold optional values, after we break out of the loop we'll unwrap them using a guard statement.
+            var favoriteContact = sections[outerIndex][innerIndex]
+            favoriteContact.isFavorite = true //  mutating the stored property of a copy of the contact NOT mutating the underlying value
+            sections[outerIndex][innerIndex] = favoriteContact // assigning the copy back into the data source
+            
+            tableView.reloadData() // reloading the table view so that it runs through the data source methods again 
+        }
+            
+    }
 }
